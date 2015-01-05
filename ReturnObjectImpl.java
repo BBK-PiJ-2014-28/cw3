@@ -5,11 +5,34 @@
 
 public class ReturnObjectImpl implements ReturnObject {
 
-    public boolean hasError();
+    private ErrorMessage anErrorMessage; //initialise ENUM ErrorMessage
+    private Object anObject;
 
-    public ErrorMessage getError();
+    /**
+     * need to insert constructors here
+     */
 
-    public Object getReturnValue();
-    
+    public boolean hasError() {
+        /**
+         * Returns whether or not an error has occurred
+         */
+        if (anErrorMessage == ErrorMessage.NO_ERROR {
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+    public ErrorMessage getError() {
+        /**
+         * Returns ErrorMessage value (or will, once constructors added)
+         */
+        return anErrorMessage;
+    }
+
+    public Object getReturnValue() {
+        return anObject; //will return anObject as null or otherwise once constructors written
+    }
+
 
 }
