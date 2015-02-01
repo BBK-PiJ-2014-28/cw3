@@ -6,30 +6,59 @@
 
 public class LinkedList implements List {
     /**
-     * Two new classes are required to implement the LinkedList
-     * (ObjectLinkedList and ObjectNode)
-     * Together with their own constructor methods
+     * Previous version unnecessarily complicated
+     * New class needed = ObjectNode
+     * Including getters, setters
      */
 
-    public class ObjectLinkedList {
+    private ObjectNode head;
 
-        private ObjectNode head;
-        public ObjectLinkedList() {
-            head = null;
+    public LinkedList() {
+        head = null;
+    }
+
+    //new class for LinkedList
+    public class ObjectNode {
+        private Object thing;
+        private ObjectNode next;
+
+        public ObjectNode(Object thing) {
+            this.thing = thing;
+            this.next = null;
         }
 
-        public void add(Object item) {
-            ObjectNode newObject = new ObjectNode(item);
-            if (head == null) {
-                head = newObject;
-                return;
-            }
-            ObjectNode node = head;
-            while (node.getNext() != null) {
-                node = node.getNext();
-            }
-            node.setNext(newObject);
+        public Object getObject() {
+            return thing;
         }
+
+        public ObjectNode getNext() {
+            return next;
+        }
+
+        public void setNext(ObjectNode newThing) {
+            this.next = newThing;
+        }
+    }
+
+    /**
+     * @return true if the list is empty, false otherwise.
+     */
+    @Override
+    public boolean isEmpty() {
+        if(head == null){
+            return true;
+        } else {
+            return false;
+        }
+    }
+}
+
+    /**
+     * @return the number of items currently in the list
+     */
+    @Override
+    public int size() {
+        //
     }
 
 }
