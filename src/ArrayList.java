@@ -106,4 +106,25 @@ public class ArrayList implements List {
             return null;
         }
     }
+
+    /**
+     * Adds an element at the end of the list.
+     *
+     * @param item the value to insert into the list
+     * @return an ReturnObject, empty if the operation is successful
+     *         the item added or containing an appropriate error message
+     */
+    @Override
+    public ReturnObject add(Object item) {
+        //no null objects allowed
+        if(item == null) {
+            return new ReturnObjectImpl(ErrorMessage.INVALID_ARGUMENT);
+        } else {
+            //increases size of array and adds item at end
+            size++;
+            myArray[size - 1] = item;
+            //returns null/empty, successful addition of element
+            return null;
+        }
+    }
 }
