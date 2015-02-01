@@ -17,9 +17,7 @@ public class ArrayList implements List {
     }
 
     /**
-     * Returns true if the list is empty, false otherwise.
-     *
-     * @return true if the list is empty, false otherwise.
+     *  @return true if the list is empty, false otherwise.
      */
     @Override
     public boolean isEmpty() {
@@ -31,8 +29,6 @@ public class ArrayList implements List {
     }
 
     /**
-     * Returns the number of items currently in the list.
-     *
      * @return the number of items currently in the list
      */
     @Override
@@ -41,16 +37,17 @@ public class ArrayList implements List {
     }
     /**
      * Returns the elements at the given position.
-     *
-     * If the index is negative or greater or equal than the size of
-     * the list, then an appropriate error must be returned.
-     *
+     * Determines if requested position does not exist
      * @param index the position in the list of the item to be retrieved
      * @return the element or an appropriate error message,
      *         encapsulated in a ReturnObject
      */
     @Override
     public ReturnObject get(int index) {
-    //tbc
+        if(index < 0 || index >= size){
+            return new ReturnObjectImpl(ErrorMessage.INDEX_OUT_OF_BOUNDS);
+        } else {
+            return new ReturnObjectImpl(myArray[index]);
+        }
     }
 }

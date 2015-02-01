@@ -12,17 +12,17 @@ public class ReturnObjectImpl implements ReturnObject {
     /**
      * constructors added for incomplete data and complete data
      */
-    ReturnObjectImpl (Object thisObject) {
+    ReturnObjectImpl(Object thisObject) {
         anObject = thisObject;
         anErrorMessage = null;
     }
 
-    ReturnObjectImpl (ErrorMessage thisErrorMessage) {
+    ReturnObjectImpl(ErrorMessage thisErrorMessage) {
         anObject = null;
         anErrorMessage = thisErrorMessage;
     }
 
-    ReturnObjectImpl (Object newObject, ErrorMessage newErrorMessage) {
+    ReturnObjectImpl(Object newObject, ErrorMessage newErrorMessage) {
         anObject = newObject;
         anErrorMessage = newErrorMessage;
     }
@@ -32,7 +32,7 @@ public class ReturnObjectImpl implements ReturnObject {
         /**
          * Returns whether or not an error has occurred
          */
-        if (anErrorMessage == ErrorMessage.NO_ERROR {
+        if(anErrorMessage == ErrorMessage.NO_ERROR) {
             return false;
         } else {
             return true;
@@ -42,7 +42,7 @@ public class ReturnObjectImpl implements ReturnObject {
     @Override
     public ErrorMessage getError() {
         /**
-         * Returns ErrorMessage value (or will, once constructors added)
+         * Returns ErrorMessage value
          */
         return anErrorMessage;
     }
