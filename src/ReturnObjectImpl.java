@@ -27,6 +27,7 @@ public class ReturnObjectImpl implements ReturnObject {
         anErrorMessage = newErrorMessage;
     }
 
+    @Override
     public boolean hasError() {
         /**
          * Returns whether or not an error has occurred
@@ -38,6 +39,7 @@ public class ReturnObjectImpl implements ReturnObject {
         }
     }
 
+    @Override
     public ErrorMessage getError() {
         /**
          * Returns ErrorMessage value (or will, once constructors added)
@@ -45,6 +47,7 @@ public class ReturnObjectImpl implements ReturnObject {
         return anErrorMessage;
     }
 
+    @Override
     public Object getReturnValue() {
         return anObject; //will return anObject as null or otherwise
     }
