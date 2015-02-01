@@ -38,6 +38,18 @@ public class LinkedList implements List {
         public void setNext(ObjectNode newThing) {
             this.next = newThing;
         }
+
+        /**method to determine how many variables in list (for size() below)
+         * @return how many variables in list
+         */
+        public int howMany() {
+            if(next == null){
+                return 1;
+            } else {
+                return 1 + next.howMany();
+            }
+        }
+
     }
 
     /**
@@ -58,7 +70,11 @@ public class LinkedList implements List {
      */
     @Override
     public int size() {
-        //
+        if(head == null){
+            return 0;
+        } else {
+            return head.howMany();
+        }
     }
 
 }
