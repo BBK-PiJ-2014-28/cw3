@@ -50,6 +50,19 @@ public class LinkedList implements List {
             }
         }
 
+        /** method to retrieve variable at certain point in list
+         * @param index (int position)
+         * @return the variable at the position
+         */
+        public ObjectNode getNode(int index){
+            if(next == null){
+                return null;
+            } else if(index == 0) {
+                return this;
+            } else {
+                return next.getNode(index - 1);
+            }
+        }
     }
 
     /**
@@ -63,7 +76,7 @@ public class LinkedList implements List {
             return false;
         }
     }
-}
+
 
     /**
      * @return the number of items currently in the list
@@ -74,6 +87,27 @@ public class LinkedList implements List {
             return 0;
         } else {
             return head.howMany();
+        }
+    }
+
+    /**
+     * Returns the elements at the given position.
+     *
+     * @param index the position in the list of the item to be retrieved
+     * @return the element or an appropriate error message,
+     *         encapsulated in a ReturnObject
+     */
+    @Override
+    public ReturnObject get(int index){
+        //determines whether requested position exists
+        if(index < 0 || index >= size){
+            return new ReturnObjectImpl(ErrorMessage.INDEX_OUT_OF_BOUNDS);
+        } else if(isEmpty()) {
+            return new ReturnObjectImpl(ErrorMessage.EMPY_STRUCTURE);
+        } else {
+            // returns object at index position (method in ObjectNode class)
+            ObjectNode element = head.getNode(index);
+            return new ReturnObjectImpl(element.getObject());
         }
     }
 
