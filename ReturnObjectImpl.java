@@ -9,8 +9,22 @@ public class ReturnObjectImpl implements ReturnObject {
     private Object anObject;
 
     /**
-     * need to insert constructors here
+     * constructors added for incomplete data and complete data
      */
+    ReturnObjectImpl (Object thisObject) {
+        anObject = thisObject;
+        anErrorMessage = null;
+    }
+
+    ReturnObjectImpl (ErrorMessage thisErrorMessage) {
+        anObject = null;
+        anErrorMessage = thisErrorMessage;
+    }
+
+    ReturnObjectImpl (Object newObject, ErrorMessage newErrorMessage) {
+        anObject = newObject;
+        anErrorMessage = newErrorMessage;
+    }
 
     public boolean hasError() {
         /**
@@ -31,7 +45,7 @@ public class ReturnObjectImpl implements ReturnObject {
     }
 
     public Object getReturnValue() {
-        return anObject; //will return anObject as null or otherwise once constructors written
+        return anObject; //will return anObject as null or otherwise
     }
 
 
