@@ -35,7 +35,7 @@ public class FunctionalLinkedList extends LinkedList implements FunctionalList{
              * So, once again here is a For loop to transfer the list values to the
              * new list, starting at i=1 to cut out the head of the list
              */
-            for(i = 1; i < size(); i++){
+            for(int i = 1; i < size(); i++){
                 Object listObject = get(i).getReturnValue();
                 requestedList.add(listObject);
             }

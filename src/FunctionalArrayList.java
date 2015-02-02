@@ -33,7 +33,7 @@ public class FunctionalArrayList extends ArrayList implements FunctionalList {
              * Starting at i = 1 means head (at 0) is excluded
              * get() does not remove the value from the original list.
              */
-            for(i = 1; i < size(); i++){
+            for(int i = 1; i < size(); i++){
                 Object listObject = get(i).getReturnValue();
                 requestedList.add(listObject);
             }
