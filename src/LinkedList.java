@@ -66,11 +66,17 @@ public class LinkedList implements List {
         }
 
         /**
-         * Method to update pointers after removal of item in list
+         * Method to update pointers for removal of item in list
          * Invoked by remove() below
          */
         public void ObjectNode bypassNode(int index){
-
+            if(index == 0){
+                head = head.getNext();
+            } else {
+                ObjectNode before = getNode(index - 1);
+                ObjectNode after = getNode(index + 1);
+                before.setNext(after);
+            }
         }
     }
 
@@ -137,7 +143,7 @@ public class LinkedList implements List {
         ReturnObject removedObject = get(index);
         //If no error returned, invoke updating of pointers
         if(!removedObject.hasError()){
-            ObjectNode update = head.bypassNode(index);
+            bypassNode(index);
             return removedObject;
         } else {
             return removedObject;
