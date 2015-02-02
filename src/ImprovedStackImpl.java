@@ -52,12 +52,9 @@ public class ImprovedStackImpl implements ImprovedStack {
     public ReturnObject pop(){
         return myStack.pop();
     }
+    
     /**
-     * Returns a copy of this stack with the items reversed, the top
-     * elements on the original stack is at the bottom of the new
-     * stack and viceversa.
-     *
-     * @return a copy of this stack with the items reversed.
+     * {@InheritDoc}
      */
     public ImprovedStack reverse(){
         //Create new ImprovedStackImpl to take reversed list
