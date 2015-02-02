@@ -2,6 +2,7 @@
  *  A class that extends AbstractStack
  *  By Annabel Jump for Programming in Java Coursework 3
  *  @author Annabel Jump
+ *  {@InheritDoc}
  */
 
 public class StackImpl extends AbstractStack {
@@ -26,4 +27,19 @@ public class StackImpl extends AbstractStack {
         }
     }
 
+    /**
+     * {@InheritDoc}
+     */
+    @Override
+    public int size(){
+        return internalList.size();
+    }
+
+    /**
+     *{@InheritDoc}
+     */
+    public void push(Object item){
+        internalList.add(item);
+    }
+    
 }
