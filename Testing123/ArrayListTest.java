@@ -54,4 +54,17 @@ public class ArrayListTest {
         assertEquals(8, testList.size());
     }
 
+    //test return from get() method (incidentally, also testing both add() methods)
+    @Test
+    public void testFetch(){
+        testList.add("Slim");
+        testList.add("Shady");
+        assertEquals("Shady", testList.get(1).getReturnValue());
+        testList.add(1, "Fetch");
+        testList.add(2, "Happens");
+        assertEquals("Shady", testList.get(3).getReturnValue());
+    }
+
+
+
 }
