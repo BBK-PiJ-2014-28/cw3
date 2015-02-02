@@ -63,8 +63,25 @@ public class ArrayListTest {
         testList.add(1, "Fetch");
         testList.add(2, "Happens");
         assertEquals("Shady", testList.get(3).getReturnValue());
+        assertEquals(ErrorMessage.INDEX_OUT_OF_BOUNDS, testList.get(4).getError());
     }
 
+    //test remove() method
+    @Test
+    public void testFetchAndCarry() {
+        testList.add("Stop");
+        testList.add("Trying");
+        testList.add("To");
+        testList.add("Make");
+        testList.add("Fetch");
+        testList.add("Happen");
+        assertEquals("Fetch", testList.remove(4).getReturnValue());
+        //now "Happen" should be at position 4
+        assertEquals("Happen", testList.get(4).getReturnValue());
+    }
 
+    /**
+     * As both add() methods already tested in the tests above, no further testing here
+     */
 
 }
