@@ -20,7 +20,7 @@ public class ReturnObjectImplTest {
     //initialise new ReturnObject
     @Before
     public void starterForTen(){
-        testReturnObject = new ReturnObjectImpl();
+        testReturnObject = new ReturnObjectImpl(ErrorMessage.NO_ERROR);
     }
 
     //reset Object after test
@@ -29,5 +29,13 @@ public class ReturnObjectImplTest {
         testReturnObject = null;
     }
 
-    
+    //test hasError()
+    @Test
+    public void testIfError(){
+        assertFalse(testReturnObject.hasError());
+        secondTestReturnObject = new ReturnObjectImpl(ErrorMessage.EMPTY_STRUCTURE);
+        assertTrue(secondTestReturnObject.hasError());
+        secondTestReturnObject = null;
+    }
+
 }
