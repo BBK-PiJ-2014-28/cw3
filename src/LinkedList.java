@@ -50,7 +50,8 @@ public class LinkedList implements List {
             }
         }
 
-        /** method to retrieve variable at certain point in list
+        /**
+         * method to retrieve variable at certain point in list
          * @param index (int position)
          * @return the variable at the position
          */
@@ -62,6 +63,14 @@ public class LinkedList implements List {
             } else {
                 return next.getNode(index - 1);
             }
+        }
+
+        /**
+         * Method to update pointers after removal of item in list
+         * Invoked by remove() below
+         */
+        public void ObjectNode bypassNode(int index){
+
         }
     }
 
@@ -110,5 +119,28 @@ public class LinkedList implements List {
             return new ReturnObjectImpl(element.getObject());
         }
     }
-
+    /**
+     * Returns the elements at the given position and removes it
+     * from the list. The indeces of elements after the removed
+     * element must be updated accordignly.
+     *
+     * @param index the position in the list of the item to be retrieved
+     * @return the element or an appropriate error message,
+     *         encapsulated in a ReturnObject
+     */
+    @Override
+    public ReturnObject remove(int index){
+        /**
+         * As in ArrayList, use get method to supply element to return
+         * (or return error for invalid request)
+         */
+        ReturnObject removedObject = get(index);
+        //If no error returned, invoke updating of pointers
+        if(!removedObject.hasError()){
+            ObjectNode update = head.bypassNode(index);
+            return removedObject;
+        } else {
+            return removedObject;
+        }
+    }
 }
