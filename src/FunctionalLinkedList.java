@@ -1,3 +1,5 @@
+package src;
+
 /**
  *  A class implementing FunctionalList interface
  *  Extends LinkedList

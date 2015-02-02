@@ -1,3 +1,5 @@
+package src;
+
 /**
  *  A class implementing List interface using pointers.
  *  By Annabel Jump for Programming in Java Coursework 3

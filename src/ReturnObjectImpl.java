@@ -1,3 +1,5 @@
+package src;
+
 /**
  *  A class implementing ReturnObject interface.
  *  By Annabel Jump for Programming in Java Coursework 3

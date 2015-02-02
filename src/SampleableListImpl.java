@@ -1,3 +1,5 @@
+package src;
+
 /**
  *  A class implementing SampleableList interface
  *  By Annabel Jump for Programming in Java Coursework 3

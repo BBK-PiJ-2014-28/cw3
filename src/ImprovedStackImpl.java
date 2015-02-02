@@ -1,3 +1,5 @@
+package src;
+
 /**
  *  An implementation of ImprovedStack
  *  By Annabel Jump for Programming in Java Coursework 3

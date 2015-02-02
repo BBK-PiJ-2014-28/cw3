@@ -1,3 +1,5 @@
+package src;
+
 /**
  *  A class implementing List interface as an Array.
  *  By Annabel Jump for Programming in Java Coursework 3
