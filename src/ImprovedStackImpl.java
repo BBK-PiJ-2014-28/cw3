@@ -52,4 +52,25 @@ public class ImprovedStackImpl implements ImprovedStack {
     public ReturnObject pop(){
         return myStack.pop();
     }
+    /**
+     * Returns a copy of this stack with the items reversed, the top
+     * elements on the original stack is at the bottom of the new
+     * stack and viceversa.
+     *
+     * @return a copy of this stack with the items reversed.
+     */
+    public ImprovedStack reverse(){
+        //Create new ImprovedStackImpl to take reversed list
+        ImprovedStack backwardsStack = new ImprovedStackImpl();
+        int size = myStack.size();
+        /**
+         * Adapt For loop from other classes
+         * using i-- will ensure reverse order
+         */
+        for(int i = size - 1; i >= 0; i--){
+            Object item = myList.get(i).getReturnValue();
+            backwardsStack.push(item);
+        }
+        return backwardsStack;
+    }
 }
