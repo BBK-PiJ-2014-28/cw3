@@ -53,4 +53,18 @@ public class FunctionalArrayListTest {
         assertEquals("Zombie", nowNow.getReturnValue());
     }
 
+    /**
+     *now check correct return with rest()
+     * by doing rest(), then check head is the original value
+     * of variable at 1
+     */
+    @Test
+    public void testRestContainsBrains() {
+        testList.add("Zombie");
+        testList.add("Wants");
+        testList.add("Brains");
+        FunctionalList mmTasty = testList.rest();
+        ReturnObject notReally = mmTasty.head();
+        assertEquals("Wants", notReally.getReturnValue());
+    }
 }
