@@ -8,7 +8,7 @@
 public class ArrayList implements List {
     //initialise list variables
     private Object[] myArray;
-    private static int STARTING_SIZE = 7;
+    private static int STARTING_SIZE = 28;
     private int size;
 
     //constructs an empty array
