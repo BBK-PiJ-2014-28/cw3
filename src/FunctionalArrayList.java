@@ -9,6 +9,7 @@ public class FunctionalArrayList extends ArrayList implements FunctionalList {
     /**
      *{@InheritDoc}
      */
+    @Override
     public ReturnObject head(){
         if(isEmpty()){
             return new ReturnObjectImpl(ErrorMessage.EMPTY_STRUCTURE);
