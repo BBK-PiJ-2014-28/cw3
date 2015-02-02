@@ -81,7 +81,7 @@ public class ImprovedStackImpl implements ImprovedStack {
         //use For loop to check all entries in Stack/List
         for(int i = 0; i < size; i++){
             if(myList.get(i).getReturnValue().equals(object)){
-                //remove the object from the stack
+                //remove the object from the stack/list
                 myList.remove(i);
             }
         }
