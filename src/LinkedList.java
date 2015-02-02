@@ -78,6 +78,23 @@ public class LinkedList implements List {
                 before.setNext(after);
             }
         }
+
+        /**
+         * Method to add new Node at index point in list
+         * Invoked by add(int, ObjectNode) below
+         */
+        public void ObjectNode addNode(int index, ObjectNode newNode){
+            if(index == 0){
+                ObjectNode second = head;
+                head = newNode;
+                head.setNext(second);
+            } else {
+                ObjectNode before = head.getNode(index - 1);
+                ObjectNode after = head.getNode(index);
+                before.setNext(newNode);
+                newNode.setNext(after);
+            }
+        }
     }
 
     /**
@@ -156,13 +173,6 @@ public class LinkedList implements List {
      * position. The indeces of elements at and after that position
      * must be updated accordignly.
      *
-     * If the index is negative or greater or equal than the size of
-     * the list, then an appropriate error must be returned.
-     *
-     * If a null object is provided to insert in the list, the
-     * request must be ignored and an appropriate error must be
-     * returned.
-     *
      * @param index the position at which the item should be inserted in
      *              the list
      * @param item the value to insert into the list
@@ -177,5 +187,10 @@ public class LinkedList implements List {
             //index error if negative or >= size of list
         } else if(index < 0 || index >= size) {
             return new ReturnObjectImpl(ErrorMessage.INDEX_OUT_OF_BOUNDS);
+        } else {
+            ObjectNode addedNode = new ObjectNode(item);
+            addNode(index, addedNode);
+            return null;
+        }
     }
 }
