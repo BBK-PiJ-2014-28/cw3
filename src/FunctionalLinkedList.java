@@ -6,7 +6,17 @@
  */
 
 public class FunctionalLinkedList extends LinkedList implements FunctionalList{
+    /**
+     *{@InheritDoc}
+     */
+    public ReturnObject head(){
+        if(isEmpty()){
+            return new ReturnObjectImpl(ErrorMessage.EMPTY_STRUCTURE);
+        } else {
+            ReturnObject requestedObject = get(0);
+            return requestedObject;
+        }
+    }
 
-    
 
 }
