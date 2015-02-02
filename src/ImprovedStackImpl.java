@@ -52,10 +52,11 @@ public class ImprovedStackImpl implements ImprovedStack {
     public ReturnObject pop(){
         return myStack.pop();
     }
-    
+
     /**
      * {@InheritDoc}
      */
+    @Override
     public ImprovedStack reverse(){
         //Create new ImprovedStackImpl to take reversed list
         ImprovedStack backwardsStack = new ImprovedStackImpl();
@@ -69,5 +70,21 @@ public class ImprovedStackImpl implements ImprovedStack {
             backwardsStack.push(item);
         }
         return backwardsStack;
+    }
+
+    /**
+     * {@InheritDoc}
+     */
+    @Override
+    public void remove(Object object){
+        int size = myStack.size();
+        //use For loop to check all entries in Stack/List
+        for(int i = 0; i < size; i++){
+            if(myList.get(i).getReturnValue().equals(object)){
+                //remove the object from the stack
+                myList.remove(i);
+            }
+        }
+        return null;
     }
 }
