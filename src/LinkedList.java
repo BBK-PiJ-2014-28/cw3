@@ -95,6 +95,20 @@ public class LinkedList implements List {
                 newNode.setNext(after);
             }
         }
+
+        /**
+         * Method to add variable at end of LinkedList
+         * Invoked by add(Object) below
+         */
+        public void ObjectNode endNode(ObjectNode newNode){
+            if(head == null){
+                head = newNode;
+            } else {
+                int endList = head.howMany();
+                ObjectNode secondLast = head.getNode(endList);
+                secondLast.setNext(newNode);
+            }
+        }
     }
 
     /**
@@ -190,6 +204,22 @@ public class LinkedList implements List {
         } else {
             ObjectNode addedNode = new ObjectNode(item);
             addNode(index, addedNode);
+            return null;
+        }
+    }
+    /**
+     * Adds an element at the end of the list.
+     * @param item the value to insert into the list
+     * @return an ReturnObject, empty if the operation is successful
+     *         the item added or containing an appropriate error message
+     */
+    public ReturnObject add(Object item){
+        //no null objects allowed
+        if(item == null) {
+            return new ReturnObjectImpl(ErrorMessage.INVALID_ARGUMENT);
+        } else {
+            ObjectNode addedNode = new ObjectNode(item);
+            endNode(addedNode);
             return null;
         }
     }
