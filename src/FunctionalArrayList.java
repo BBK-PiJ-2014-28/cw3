@@ -19,14 +19,25 @@ public class FunctionalArrayList extends ArrayList implements FunctionalList {
     }
 
     /**
-     * Returns a list with the elements in this list except the
-     * head. The elements must be in the same order. The original list
-     * must not change or be affected by changes in the new list.
-     *
-     * If the list is empty, another empty list is returned.
+     *{@InheritDoc}
      */
+    @Override
     public FunctionalList rest(){
-
+        FunctionalList requestedList = new FunctionalArrayList();
+        if(isEmpty()){
+            return requestedList;
+        } else {
+            /**
+             * For loop to copy values to new List
+             * Starting at i = 1 means head (at 0) is excluded
+             * get() does not remove the value from the original list.
+             */
+            for(i = 1; i < size(); i++){
+                Object listObject = get(i).getReturnValue();
+                requestedList.add(listObject);
+            }
+            return requestedList;
+        }
     }
 
 }
