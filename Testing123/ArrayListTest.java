@@ -15,3 +15,43 @@ import src.ErrorMessage;
 import org.junit.*;
 import org.junit.Assert.*;
 
+public class ArrayListTest {
+
+    public List testList;
+
+    //initialise new ArrayList for test
+    @Before
+    public void starterForTen(){
+        testList = new ArrayList();
+    }
+
+    //reset list after test
+    @After
+    public void windingDown(){
+        testList = null;
+    }
+
+    //list should initially be empty
+    @Test
+    public void testIfListIsEmpty(){
+        assertTrue(testList.isEmpty());
+        testList.add("Hi");
+        assertFalse(testList.isEmpty());
+    }
+
+    //list should have initial size of 0
+    @Test
+    public void testSizeOfList() {
+        assertEquals(0, testList.size());
+        testList.add("Hi");
+        testList.add("My");
+        testList.add("Name");
+        testList.add("Is");
+        testList.add("WHAT");
+        testList.add("My");
+        testList.add("Name");
+        testList.add("Is");
+        assertEquals(8, testList.size());
+    }
+
+}
