@@ -2,6 +2,7 @@
  *  A class implementing SampleableList interface
  *  By Annabel Jump for Programming in Java Coursework 3
  *  @author Annabel Jump
+ *  {@InheritDoc}
  */
 
 public class SampleableListImpl extends ArrayList implements SampleableList{
@@ -26,6 +27,5 @@ public class SampleableListImpl extends ArrayList implements SampleableList{
         }
 
     }
-
 
 }

@@ -2,6 +2,7 @@
  *  A class implementing ReturnObject interface.
  *  By Annabel Jump for Programming in Java Coursework 3
  *  @author Annabel Jump
+ *  {@InheritDoc}
  */
 
 public class ReturnObjectImpl implements ReturnObject {
@@ -27,11 +28,11 @@ public class ReturnObjectImpl implements ReturnObject {
         anErrorMessage = newErrorMessage;
     }
 
+    /**
+     * {@InheritDoc}
+     */
     @Override
     public boolean hasError() {
-        /**
-         * Returns whether or not an error has occurred
-         */
         if(anErrorMessage == ErrorMessage.NO_ERROR) {
             return false;
         } else {
@@ -39,14 +40,17 @@ public class ReturnObjectImpl implements ReturnObject {
         }
     }
 
+    /**
+     * {@InheritDoc}
+     */
     @Override
     public ErrorMessage getError() {
-        /**
-         * Returns ErrorMessage value
-         */
         return anErrorMessage;
     }
 
+    /**
+     * {@InheritDoc}
+     */
     @Override
     public Object getReturnValue() {
         return anObject; //will return anObject as null or otherwise

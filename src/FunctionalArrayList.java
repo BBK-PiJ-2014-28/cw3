@@ -3,6 +3,7 @@
  *  Extends ArrayList
  *  By Annabel Jump for Programming in Java Coursework 3
  *  @author Annabel Jump
+ *  {@InheritDoc}
  */
 
 public class FunctionalArrayList extends ArrayList implements FunctionalList {
