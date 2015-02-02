@@ -20,7 +20,7 @@ public class ReturnObjectImplTest {
     //initialise new ReturnObject
     @Before
     public void starterForTen(){
-        testReturnObject = new ReturnObjectImpl(ErrorMessage.NO_ERROR);
+        testReturnObject = new ReturnObjectImpl(ErrorMessage.NO_ERROR, "Mean");
     }
 
     //reset Object after test
@@ -36,6 +36,13 @@ public class ReturnObjectImplTest {
         secondTestReturnObject = new ReturnObjectImpl(ErrorMessage.EMPTY_STRUCTURE);
         assertTrue(secondTestReturnObject.hasError());
         secondTestReturnObject = null;
+    }
+
+    //test getError() and getReturnValue()
+    @Test
+    public void testErrorFetch(){
+        assertEquals(ErrorMessage.NO_ERROR, testReturnObject.getError());
+        assertEquals("Mean", testReturnObject.getReturnValue());
     }
 
 }
